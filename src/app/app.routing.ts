@@ -9,6 +9,11 @@ const routes: Route[] = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
+  {
+    path: 'randm',
+    loadChildren: () =>
+      import('./randm/randm.module').then((m) => m.RandmModule),
+  },
 ];
 
 @NgModule({
