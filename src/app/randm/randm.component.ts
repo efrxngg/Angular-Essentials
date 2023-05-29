@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CharacterService } from './services/character.service';
-import { Result } from './interfaces/apiresponse.dto';
+import { CharacterService } from './services/character/character.service';
+import { Character } from './services/dtos/character.dto';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class RandmComponent implements OnInit {
   constructor(private characterService: CharacterService) {}
 
-  characters!: Observable<Result[]>;
+  characters!: Observable<Character[]>;
 
   ngOnInit(): void {
     this.characters = this.characterService.getAllCharacters();
