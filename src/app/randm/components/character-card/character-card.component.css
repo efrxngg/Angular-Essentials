@@ -1,0 +1,45 @@
+.bg-color {
+  background-color: #636363;
+}
+
+.card {
+  width: 600px;
+  height: 220px;
+  display: flex;
+  overflow: hidden;
+  background: rgb(60, 62, 68);
+  border-radius: 0.5rem;
+  margin: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.character-img {
+  flex: 2 1 0%;
+  width: 100%;
+}
+
+.character-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character-description {
+  flex: 3 1 0%;
+  position: relative;
+  padding: 0.75rem;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+}
+
+.head-card {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}

@@ -11,7 +11,13 @@ export class CharacterService {
 
   getAllCharacters(): Observable<Character[]> {
     return this.httpClient
-      .get<Root>(environment.API_URL_RANDM)
+      .get<Root>(environment.API_RANDM_CHARACTER)
       .pipe(map((response: Root) => response.results));
+  }
+
+  getCharacterById(id: number): Observable<Character> {
+    return this.httpClient.get<Character>(
+      `${environment.API_RANDM_CHARACTER}/${id}`
+    );
   }
 }

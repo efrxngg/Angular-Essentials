@@ -1,0 +1,34 @@
+<article class="card bg-color">
+  <div class="character-img">
+    <img [src]="character.image" [title]="character.name" alt="img" />
+  </div>
+  <div class="character-description">
+    <!-- head -->
+    <div>
+      <h2
+        [ngStyle]="{
+          color: character.status === 'Alive' ? '#fff' : '#c7c7c7'
+        }"
+      >
+        <a [routerLink]="['/randm', character.id]">
+          {{ character.name }}
+        </a>
+      </h2>
+
+      <div>
+        <span>{{ character.species }}</span>
+        -
+        <span>{{ character.gender }}</span>
+      </div>
+    </div>
+    <!-- body -->
+    <div *ngIf="character.origin.name === 'unknown'; else location2">
+      <span>{{ character.location.name }}</span>
+    </div>
+    <ng-template #location2>
+      <span>{{ character.origin.name }}</span>
+    </ng-template>
+    <!-- footer -->
+    <div></div>
+  </div>
+</article>

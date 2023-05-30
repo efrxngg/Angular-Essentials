@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  API_URL_RANDM: 'https://rickandmortyapi.com/api/character',
+  API_RANDM_CHARACTER: 'https://rickandmortyapi.com/api/character',
 };
