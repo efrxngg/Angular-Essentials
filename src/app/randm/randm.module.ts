@@ -8,7 +8,7 @@ import { CharacterCardComponent } from './components/character-card/character-ca
 const routes: Route[] = [
   {
     path: '',
-    component: CharacterListComponent,
+    component: RandmComponent,
   },
   {
     path: ':id',
@@ -26,5 +26,6 @@ const routes: Route[] = [
     CharacterCardComponent,
   ],
   imports: [CommonModule, RouterModule.forChild(routes)],
+  exports: [RandmComponent],
 })
 export class RandmModule {}
