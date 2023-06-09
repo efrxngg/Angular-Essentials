@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RandmComponent } from './randm.component';
 import { Route, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { RandmComponent } from './randm.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterCardComponent } from './components/character-card/character-card.component';
+import { CharacterSearchComponent } from './components/character-search/character-search.component';
 
 const routes: Route[] = [
   {
@@ -24,8 +26,9 @@ const routes: Route[] = [
     RandmComponent,
     CharacterListComponent,
     CharacterCardComponent,
+    CharacterSearchComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes)],
+  imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
   exports: [RandmComponent],
 })
 export class RandmModule {}

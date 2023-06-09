@@ -19,4 +19,8 @@ export class RandmComponent implements OnInit {
       .getAllCharacters()
       .pipe(tap(console.log));
   }
+
+  onSearch(searchTerm: string) {
+    console.log('Search: ' + searchTerm);
+  }
 }

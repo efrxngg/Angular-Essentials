@@ -1,1 +1,10 @@
-<app-character-list [characters]="(characters | async) || []"></app-character-list>
+<header class="content">
+  <h1>Rick and Morty</h1>
+  <app-character-search (searchEvent)="onSearch($event)"></app-character-search>
+</header>
+<app-character-list
+  [characters]="(characters | async) || []"
+></app-character-list>
+<footer>
+  <span><strong>~</strong>efrxngg</span>
+</footer>
