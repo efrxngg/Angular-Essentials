@@ -21,6 +21,8 @@ export class RandmComponent implements OnInit {
   }
 
   onSearch(searchTerm: string) {
-    console.log('Search: ' + searchTerm);
+    this.characters = this.characterService
+      .getAllCharacterByName(searchTerm)
+      .pipe(tap(console.log));
   }
 }
