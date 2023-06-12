@@ -6,6 +6,7 @@ import { RandmComponent } from './randm.component';
 import { CharacterListComponent } from './components/character-list/character-list.component';
 import { CharacterCardComponent } from './components/character-card/character-card.component';
 import { CharacterSearchComponent } from './components/character-search/character-search.component';
+import { CharacterPaginationComponent } from './components/character-pagination/character-pagination.component';
 
 const routes: Route[] = [
   {
@@ -27,6 +28,7 @@ const routes: Route[] = [
     CharacterListComponent,
     CharacterCardComponent,
     CharacterSearchComponent,
+    CharacterPaginationComponent,
   ],
   imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
   exports: [RandmComponent],

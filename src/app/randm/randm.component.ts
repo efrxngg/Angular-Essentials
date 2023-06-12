@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Character } from './services/dtos/character.dto';
+import { Character, Info, Root } from './services/dtos/character.dto';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { CharacterService } from './services/character/character.service';
 
 @Component({
@@ -11,18 +11,23 @@ import { CharacterService } from './services/character/character.service';
 })
 export class RandmComponent implements OnInit {
   characters!: Observable<Character[]>;
+  info!: Info;
 
   constructor(private characterService: CharacterService) {}
 
   ngOnInit(): void {
-    this.characters = this.characterService
-      .getAllCharacters()
-      .pipe(tap(console.log));
+    this.characters = this.characterService.getAllCharacters().pipe(
+      tap((response: Root) => (this.info = response.info)),
+      map((response: Root) => response.results)
+    );
   }
 
   onSearch(searchTerm: string) {
     this.characters = this.characterService
       .getAllCharacterByName(searchTerm)
-      .pipe(tap(console.log));
+      .pipe(
+        tap((response: Root) => (this.info = response.info)),
+        map((response: Root) => response.results)
+      );
   }
 }

@@ -9,16 +9,14 @@ import { environment } from 'src/environments/env.dev';
 export class CharacterService {
   constructor(private httpClient: HttpClient) {}
 
-  getAllCharacters(): Observable<Character[]> {
-    return this.httpClient
-      .get<Root>(environment.API_RANDM_CHARACTER)
-      .pipe(map((response: Root) => response.results));
+  getAllCharacters(): Observable<Root> {
+    return this.httpClient.get<Root>(environment.API_RANDM_CHARACTER);
   }
 
-  getAllCharacterByName(name: string): Observable<Character[]> {
-    return this.httpClient
-      .get<Root>(`${environment.API_RANDM_CHARACTER}/?name=${name}`)
-      .pipe(map((response: Root) => response.results));
+  getAllCharacterByName(name: string): Observable<Root> {
+    return this.httpClient.get<Root>(
+      `${environment.API_RANDM_CHARACTER}/?name=${name}`
+    );
   }
 
   getCharacterById(id: number): Observable<Character> {
