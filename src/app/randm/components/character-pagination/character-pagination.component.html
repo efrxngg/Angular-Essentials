@@ -1,4 +1,4 @@
-<div class="content">
-  <button>next</button>
-  <button>prev</button>
+<div *ngIf="infoPagination" class="content">
+  <button *ngIf="infoPagination.prev" (click)="prevPage()">prev</button>
+  <button *ngIf="infoPagination.next" (click)="nextPage()">next</button>
 </div>

@@ -7,7 +7,10 @@
   <app-character-list
     [characters]="(characters | async) || []"
   ></app-character-list>
-  <app-character-pagination></app-character-pagination>
+  <app-character-pagination
+    (pageEvent)="onChangePage($event)"
+    [infoPagination]="info"
+  ></app-character-pagination>
 </div>
 
 <footer>
