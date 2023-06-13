@@ -30,4 +30,14 @@ export class RandmComponent implements OnInit {
         map((response: Root) => response.results)
       );
   }
+
+  onChangePage(page: string) {
+    const match = page.match(/\?(.*)/);
+    if (match) {
+      this.characters = this.characterService.getCharactersPage(match[1]).pipe(
+        tap((response: Root) => (this.info = response.info)),
+        map((response: Root) => response.results)
+      );
+    }
+  }
 }

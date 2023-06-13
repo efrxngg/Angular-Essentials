@@ -9,6 +9,10 @@ import { environment } from 'src/environments/env.dev';
 export class CharacterService {
   constructor(private httpClient: HttpClient) {}
 
+  getCharactersPage(uri: string) {
+    return this.httpClient.get<Root>(`${environment.API_RANDM_CHARACTER}/?${uri}`);
+  }
+
   getAllCharacters(): Observable<Root> {
     return this.httpClient.get<Root>(environment.API_RANDM_CHARACTER);
   }
